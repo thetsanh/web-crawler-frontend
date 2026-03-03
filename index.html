@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Oscar Best Picture Winners 1995-2024</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="navbar">
+        <div class="logo">Oscar Best Picture Winners 1995-2024</div>
+
+            <div class="nav-controls">
+
+                <button id="sortBtn" class="sort-btn">Sort: Default</button>
+
+                
+                <div class="search-wrapper">
+                    <input type="text" id="searchInput" placeholder="Search movies...">
+                    <span class="search-icon">&#128269;</span>
+                </div>
+
+               <select id="yearFilter" class="red-filter">
+                    <option value="All">Filter</option>
+                    <option value="2024">2024</option>
+                    <option value="2023">2023</option>
+                    <option value="2022">2022</option>
+               </select>
+            </div>
+    </div>
+
+    <main class="main-content">
+        <div id="movieGrid" class="grid"></div>
+        <div id="noResults" class="no-results">Item not found</div>
+    </main>
+
+    <footer class="footer">
+        © Oscar Best Picture Winners 1995–2024 | Team name
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

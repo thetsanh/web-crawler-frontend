@@ -1,0 +1,259 @@
+/* ================= GLOBAL ================= */
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background: #1a1a1a;
+    color: #eaeaea;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+/* ================= NAVBAR ================= */
+
+.navbar {
+    background: #000;
+    padding: 18px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0px;
+}
+
+.logo {
+    flex: 1;
+    font-weight: 700;
+    font-size: 1.5rem;  /* ← change this */
+    color: #e50914;
+    white-space: nowrap;
+}
+.nav-controls {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* ================= SEARCH ================= */
+
+.search-wrapper {
+    position: relative;
+}
+
+.search-wrapper input {
+    width: 260px;
+    padding: 12px 40px 12px 18px;
+    border-radius: 30px;
+    border: none;
+    background: #1e1e1e;
+    color: white;
+    font-size: 14px;
+    outline: none;
+}
+
+.search-wrapper input:focus {
+    box-shadow: 0 0 10px rgba(229, 9, 20, 0.6);
+}
+
+.search-icon {
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0.6;
+}
+
+/* ================= FILTER ================= */
+
+select {
+    padding: 10px 40px 10px 15px; /* extra right padding */
+    background: #2a2a2a;
+    border: 1px solid #333;
+    border-radius: 12px; /* smoother */
+    color: #eee;
+    cursor: pointer;
+    appearance: none;         /* remove default styling */
+    -webkit-appearance: none; /* Safari */
+    -moz-appearance: none;    /* Firefox */
+    position: relative;
+    background-image: url("data:image/svg+xml;utf8,<svg fill='%23ccc' height='20' viewBox='0 0 24 24' width='20' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+
+}
+
+/* ================= GRID ================= */
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+    gap: 35px;
+    padding: 50px;
+}
+
+.card {
+    cursor: pointer;
+    transition: transform 0.25s ease;
+}
+
+.card:hover {
+    transform: scale(1.04);
+}
+
+.poster-wrapper {
+    border-radius: 15px;
+    overflow: hidden;
+    transition: 0.3s ease;
+}
+
+.poster-wrapper:hover {
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.9);
+}
+
+.poster-wrapper img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    display: block;
+}
+
+.card h3 {
+    margin-top: 12px;
+    font-weight: 500;
+    color: #f1f1f1;
+}
+
+/* ================= DETAILS PAGE ================= */
+
+/* Container only controls width + spacing */
+#detailsContainer {
+    width: 80%;
+    margin: 20px auto;
+}
+
+/* Back button wrapper (under navbar, left aligned)
+.back-wrapper {
+    margin-bottom: 20px;
+} */
+
+/* Back button */
+.back-btn {
+    padding: 10px 18px;
+    border-radius: 10px;
+    border: none;
+    background: #e50914;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.25s ease;
+    margin-left: 10%;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    
+}
+.back-btn:hover {
+    background: #ff1f2a;
+    box-shadow: 0 0 10px rgba(229, 9, 20, 0.5);
+}
+
+/* Details card */
+.details-card {
+    display: flex;
+    gap: 50px;
+    align-items: flex-start;
+    padding: 25px;
+    background: #111;
+    border-radius: 12px;
+    border: 1px solid #222;
+}
+
+/* Poster */
+.details-card img {
+    width: 300px;
+    border-radius: 10px;
+    border: 1px solid #333;
+}
+
+/* Text */
+.details-text {
+    flex: 1;
+}
+
+.details-text h2 {
+    margin-top: 0;
+    font-size: 2.2rem;
+    margin-bottom: 25px;
+    color: #ffffff;
+}
+
+.details-text p {
+    margin: 10px 0;
+    color: #ccc;
+}
+
+/* Labels red */
+.details-text strong {
+    color: #e50914;
+    font-weight: 600;
+}
+
+/* Budget + Box Office green */
+.details-text p:nth-last-child(3) strong,
+.details-text p:nth-last-child(2) strong {
+    color: #00c853;
+}
+
+.details-page {
+    max-width: 1200px;
+    margin: 30px auto;
+}
+.top-bar {
+    margin-bottom: 15px;
+}
+
+.back-btn:hover {
+    background: #444;
+}
+
+.footer {
+    text-align: center;
+    padding: 25px;
+    background: #000;
+    color: #888;
+    font-size: 0.9rem;
+}
+
+.sort-btn {
+    background-color: #1e1e1e;
+    color: white;
+    border: 1px solid #333;
+    padding: 10px 18px;
+    border-radius: 10px;   /* rounded rectangle */
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.sort-btn:hover {
+    background-color: #2a2a2a;
+    box-shadow: 0 0 15px rgba(235, 0, 12, 0.6);
+}
+
+.no-results {
+    display: none;
+    flex: 1;              /* THIS is the important part */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    color: #888;
+}   
