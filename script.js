@@ -43,7 +43,7 @@ function displayMovies(movieArray) {
         grid.innerHTML += `
             <div class="card" onclick="goToDetails(${movies.indexOf(movie)})">
                 <div class="poster-wrapper">
-                    <img src="https://picsum.photos/300/450?random=${index}" alt="${movie.title}">
+                    <img src="${movie.poster}" alt="${movie.title}">
                 </div>
                 <h3>${movie.title}</h3>
             </div>
@@ -147,21 +147,21 @@ function showDetails() {
     const movie = movies[index];
 
     container.innerHTML = `
-        <div class="details-card">
-            <img src="https://picsum.photos/300/450?random=${movies.indexOf(movie)}" alt="${movie.title}">
-            <div class="details-text">
-                <h2>${movie.title}</h2>
-                <p><strong>Director:</strong> ${movie.director}</p>
-                <p><strong>Starring:</strong> ${movie.starring.join(", ")}</p>
-                <p><strong>Production:</strong> ${movie.production_companies.join(", ")}</p>
-                <p><strong>Distributor:</strong> ${movie.distributor}</p>
-                <p><strong>Running Time:</strong> ${movie.running_time} min</p>
-                <p><strong>Country:</strong> ${movie.country}</p>
-                <p><strong>Budget:</strong> $${movie.budget.toLocaleString()}</p>
-                <p><strong>Box Office:</strong> $${movie.box_office.toLocaleString()}</p>
-                <p><strong>Language:</strong> ${movie.language}</p>
-            </div>
+    <div class="details-card">
+        <img src="${movie.poster}" alt="${movie.title}">
+        <div class="details-text">
+            <h2>${movie.title}</h2>
+            <p><strong>Director:</strong> ${movie.director}</p>
+            <p><strong>Starring:</strong> ${movie.starring.join(", ")}</p>
+            <p><strong>Production:</strong> ${movie.production_companies.join(", ")}</p>
+            <p><strong>Distributor:</strong> ${movie.distributor}</p>
+            <p><strong>Running Time:</strong> ${movie.running_time} min</p>
+            <p><strong>Country:</strong> ${movie.country}</p>
+            <p><strong>Budget:</strong> $${movie.budget.toLocaleString()}</p>
+            <p><strong>Box Office:</strong> $${movie.box_office.toLocaleString()}</p>
+            <p><strong>Language:</strong> ${movie.language}</p>
         </div>
+    </div>
     `;
 }
 

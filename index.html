@@ -12,25 +12,39 @@
         <div class="logo">Oscar Best Picture Winners 1995-2024</div>
 
             <div class="nav-controls">
-
-                <button id="sortBtn" class="sort-btn">Sort: Default</button>
-
-                
-                <div class="search-wrapper">
-                    <input type="text" id="searchInput" placeholder="Search movies...">
-                    <span class="search-icon">&#128269;</span>
-                </div>
-
-               <select id="yearFilter" class="red-filter">
+                <select id="yearFilter" class="red-filter">
                     <option value="All">Filter</option>
                     <option value="2024">2024</option>
                     <option value="2023">2023</option>
                     <option value="2022">2022</option>
                </select>
+                <div class="search-wrapper">
+                    <input type="text" id="searchInput" placeholder="Search movies...">
+                    <span class="search-icon">&#128269;</span>
+              
+                </div>
+                <a href="https://github.com/YOURREPO" target="_blank" class="github-btn">
+                Github
+                </a>
             </div>
+        </div>
     </div>
 
+<!-- 
+    <section id="banner">
+        <div class="banner-content">
+            <h1 id="bannerTitle"></h1>
+            <p id="bannerMeta"></p>
+            <p id="bannerCast"></p>
+
+            <button id="bannerBtn">More</button>
+        </div>
+    </section> -->
+
     <main class="main-content">
+        <div class="grid-top">
+            <div id="sortBtn" class="sort-text">Sort: Default</div>
+        </div>
         <div id="movieGrid" class="grid"></div>
         <div id="noResults" class="no-results">Item not found</div>
     </main>
@@ -42,3 +56,4 @@
     <script src="script.js"></script>
 </body>
 </html>
+
