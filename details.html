@@ -1,32 +1,38 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
     <title>Movie Details</title>
     <link rel="stylesheet" href="style.css">
-    <meta charset="UTF-8">
 </head>
+
 <body>
 
-<!-- ✅ NAVBAR (ADD THIS) -->
+<!-- NAVBAR -->
 <div class="navbar">
     <div class="logo">Oscar Best Picture Winners 1995-2024</div>
 
-    <div class="search-wrapper">
-        <input type="text" placeholder="Search movies..." id="searchInput">
-        <span class="search-icon">&#128269;</span>
+    <div class="nav-controls">
+        <div class="search-wrapper">
+            <input type="text" placeholder="Search movies..." id="searchInput">
+            <span class="search-icon">&#128269;</span>
+        </div>
     </div>
 </div>
 
 <main class="details-page">
 
     <button class="back-btn" onclick="goBack()">← Back</button>
+
     <div id="detailsContainer"></div>
 
 </main>
 
-<script src="script.js"></script>
 <footer class="footer">
     © Oscar Best Picture Winners 1995–2024 | Team name
 </footer>
+
+<script src="script.js"></script>
+
 </body>
 </html>

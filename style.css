@@ -242,87 +242,51 @@ cursor:pointer;
 }
 /* ================= DETAILS PAGE ================= */
 
-/* Container only controls width + spacing */
-#detailsContainer {
+.details-page{
     width: 80%;
-    margin: 20px auto;
+    margin: 40px auto;
 }
 
-/* Back button wrapper (under navbar, left aligned)
-.back-wrapper {
-    margin-bottom: 20px;
-} */
-
-/* Back button */
-.back-btn {
-    padding: 10px 18px;
-    border-radius: 10px;
-    border: none;
-    background: #e50914;
-    color: white;
-    font-size: 14px;
-    cursor: pointer;
-    transition: 0.25s ease;
-    margin-left: 10%;
-    margin-top: 0px;
-    margin-bottom: 0px;
-    
-}
-.back-btn:hover {
-    background: #ff1f2a;
-    box-shadow: 0 0 10px rgba(229, 9, 20, 0.5);
+.back-btn{
+    padding:10px 18px;
+    border:none;
+    border-radius:10px;
+    background:#e50914;
+    color:white;
+    cursor:pointer;
+    margin-bottom:25px;
 }
 
-/* Details card */
-.details-card {
-    display: flex;
-    gap: 50px;
-    align-items: flex-start;
-    padding: 25px;
-    background: #111;
-    border-radius: 12px;
-    border: 1px solid #222;
+.details-card{
+    display:flex;
+    gap:50px;
+    background:#111;
+    padding:30px;
+    border-radius:12px;
+    border:1px solid #222;
 }
 
-/* Poster */
-.details-card img {
-    width: 300px;
-    border-radius: 10px;
-    border: 1px solid #333;
+.details-card img{
+    width:300px;
+    border-radius:10px;
 }
 
-/* Text */
-.details-text {
-    flex: 1;
+.details-text{
+    flex:1;
 }
 
-.details-text h2 {
-    margin-top: 0;
-    font-size: 2.2rem;
-    margin-bottom: 25px;
-    color: #ffffff;
+.details-text h2{
+    font-size:32px;
+    margin-bottom:20px;
 }
 
-.details-text p {
-    margin: 10px 0;
-    color: #ccc;
+.details-text p{
+    margin:10px 0;
+    color:#ccc;
 }
 
-/* Labels red */
-.details-text strong {
-    color: #e50914;
-    font-weight: 600;
-}
-
-/* Budget + Box Office green */
-.details-text p:nth-last-child(3) strong,
-.details-text p:nth-last-child(2) strong {
-    color: #00c853;
-}
-
-.details-page {
-    max-width: 1200px;
-    margin: 30px auto;
+.details-text strong{
+    color:#e50914;
 }
 .top-bar {
     margin-bottom: 15px;
