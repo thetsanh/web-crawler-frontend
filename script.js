@@ -21,6 +21,7 @@ fetch("data.json")
 
         if (document.getElementById("movieGrid")) {
             displayMovies(currentMovies);
+            setupPagination(currentMovies);
             setupHomeEvents();
         }
 
@@ -55,11 +56,7 @@ function setupHomeEvents() {
 
     const searchInput = document.getElementById("searchInput");
     if (searchInput) {
-        searchInput.addEventListener("keypress", function(e) {
-            if (e.key === "Enter") {
-                applyFilters();
-            }
-        });
+        searchInput.addEventListener("input", applyFilters);
     }
 
     const yearFilter = document.getElementById("yearFilter");
@@ -70,6 +67,95 @@ function setupHomeEvents() {
     const sortBtn = document.getElementById("sortBtn");
     if (sortBtn) {
         sortBtn.addEventListener("click", handleSort);
+    }
+}
+
+const logo = document.querySelector(".logo");
+
+if (logo) {
+    logo.addEventListener("click", () => {
+
+        const searchInput = document.getElementById("searchInput");
+        const yearFilter = document.getElementById("yearFilter");
+
+        if (searchInput) searchInput.value = "";
+        if (yearFilter) yearFilter.value = "All";
+
+        currentMovies = [...originalMovies];
+        currentPage = 1;
+
+        displayMovies(currentMovies);
+        setupPagination(currentMovies);
+
+        const noResults = document.getElementById("noResults");
+        const grid = document.getElementById("movieGrid");
+
+        if (noResults) noResults.style.display = "none";
+        if (grid) grid.style.display = "grid";
+    });
+}
+/* =========================
+    PAGING
+========================= */
+const moviesPerPage = 30;
+let currentPage = 1;
+
+function displayMovies(movies) {
+
+    const grid = document.getElementById("movieGrid");
+    if (!grid) return;
+
+    grid.innerHTML = "";
+
+    const start = (currentPage - 1) * moviesPerPage;
+    const end = start + moviesPerPage;
+
+    const moviesToShow = movies.slice(start, end);
+
+    moviesToShow.forEach((movie, i) => {
+
+        const movieCard = document.createElement("div");
+        movieCard.classList.add("card");
+
+        movieCard.innerHTML = `
+            <div class="poster-wrapper">
+                <img src="${movie.poster}" alt="${movie.title}">
+            </div>
+            <h3>${movie.title}</h3>
+        `;
+
+        movieCard.onclick = () => goToDetails(start + i);
+
+        grid.appendChild(movieCard);
+
+    });
+
+}
+
+function setupPagination(movies) {
+
+    const pageCount = Math.ceil(movies.length / moviesPerPage);
+    const pagination = document.getElementById("pagination");
+
+    pagination.innerHTML = "";
+
+    for (let i = 1; i <= pageCount; i++) {
+
+        const button = document.createElement("button");
+        button.innerText = i;
+
+        if (i === currentPage) {
+            button.classList.add("active-page");
+        }
+
+        button.addEventListener("click", () => {
+            currentPage = i;
+            displayMovies(movies);
+            setupPagination(movies);
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+
+        pagination.appendChild(button);
     }
 }
 
@@ -90,13 +176,20 @@ function applyFilters() {
     const grid = document.getElementById("movieGrid");
     const noResults = document.getElementById("noResults");
 
+    const searchText = searchInput.value.trim();
+
     if (currentMovies.length === 0) {
         grid.style.display = "none";
         noResults.style.display = "flex";
+
+        noResults.textContent = `No movies found for "${searchText}"`;
+
     } else {
         grid.style.display = "grid";
         noResults.style.display = "none";
+        currentPage = 1;
         displayMovies(currentMovies);
+        setupPagination(currentMovies);
     }
 }
 function handleSort() {
@@ -121,7 +214,9 @@ function handleSort() {
         return;
     }
 
+    currentPage = 1;
     displayMovies(currentMovies);
+    setupPagination(currentMovies);
 }
 
 /* =========================

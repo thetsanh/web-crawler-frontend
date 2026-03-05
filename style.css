@@ -18,6 +18,8 @@ body {
     display: flex;
     flex-direction: column;
 }
+
+
 /* ================= NAVBAR ================= */
 
 .navbar {
@@ -35,6 +37,11 @@ body {
     font-size: 1.5rem;  /* ← change this */
     color: #e50914;
     white-space: nowrap;
+    cursor: pointer;
+}
+
+.logo-hover {
+    color: #7d0006;
 }
 .nav-controls {
     display: flex;
@@ -208,6 +215,31 @@ cursor:pointer;
 .sort-text:hover {
     color: white;
 }
+
+/* ================= PAGINATION ================= */
+#pagination {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 40px 0;
+}
+
+#pagination button {
+    background: #222;
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+#pagination button:hover {
+    background: #444;
+}
+
+.active-page {
+    background: #e50914;
+}
 /* ================= DETAILS PAGE ================= */
 
 /* Container only controls width + spacing */
@@ -322,10 +354,10 @@ cursor:pointer;
 
 .no-results {
     display: none;
-    flex: 1;              /* THIS is the important part */
-    display: flex;
-    align-items: center;
     justify-content: center;
-    font-size: 1.6rem;
-    color: #888;
+    align-items: center;
+    margin-top: 200px;
+    margin-bottom: 150px;
+    color: #aaa;
+    font-size: 20px;
 }   
